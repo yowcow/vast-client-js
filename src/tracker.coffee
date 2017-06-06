@@ -1,8 +1,8 @@
 VASTClient = require('./client')
 VASTUtil = require('./util')
-VASTCreativeLinear = require('./creative').VASTCreativeLinear
-VASTNonLinear = require('./nonlinear')
-VASTCompanionAd = require('./companionad')
+VASTCreativeLinear = require('./response/creative').VASTCreativeLinear
+VASTNonLinear = require('./response/nonlinear')
+VASTCompanionAd = require('./response/companionad')
 EventEmitter = require('events').EventEmitter
 
 class VASTTracker extends EventEmitter

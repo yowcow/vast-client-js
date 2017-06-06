@@ -1,16 +1,16 @@
 URLHandler = require './urlhandler'
-VASTResponse = require './response'
-VASTAd = require './ad'
-VASTAdExtension = require './extension'
-VASTAdExtensionChild = require './extensionchild'
+VASTResponse = require './response/response'
+VASTAd = require './response/ad'
+VASTAdExtension = require './response/extension'
+VASTAdExtensionChild = require './response/extensionchild'
 VASTUtil = require './util'
-VASTCreativeLinear = require('./creative').VASTCreativeLinear
-VASTCreativeCompanion = require('./creative').VASTCreativeCompanion
-VASTCreativeNonLinear = require('./creative').VASTCreativeNonLinear
-VASTMediaFile = require './mediafile'
-VASTIcon = require './icon'
-VASTCompanionAd = require './companionad'
-VASTNonLinear = require './nonlinear'
+VASTCreativeLinear = require('./response/creative').VASTCreativeLinear
+VASTCreativeCompanion = require('./response/creative').VASTCreativeCompanion
+VASTCreativeNonLinear = require('./response/creative').VASTCreativeNonLinear
+VASTMediaFile = require './response/mediafile'
+VASTIcon = require './response/icon'
+VASTCompanionAd = require './response/companionad'
+VASTNonLinear = require './response/nonlinear'
 EventEmitter = require('events').EventEmitter
 
 DEFAULT_MAX_WRAPPER_WIDTH = 10

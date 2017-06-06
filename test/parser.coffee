@@ -1,7 +1,7 @@
 should = require 'should'
 path = require 'path'
 VASTParser = require '../src/parser'
-VASTResponse = require '../src/response'
+VASTResponse = require '../src/response/response'
 VASTUtil = require '../src/util'
 
 urlfor = (relpath) ->
