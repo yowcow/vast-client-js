@@ -21,6 +21,8 @@ DEFAULT_EVENT_DATA =
 
 class VASTParser
     maxWrapperDepth = null
+    timeoutDuration = 0
+    timeoutStart = 0
     URLTemplateFilters = []
 
     @addURLTemplateFilter: (func) ->
@@ -38,6 +40,9 @@ class VASTParser
 
         maxWrapperDepth = options.wrapperLimit || DEFAULT_MAX_WRAPPER_WIDTH
         options.wrapperDepth = 0
+
+        timeoutDuration = options.timeout || 0
+        timeoutStart = Date.now()
 
         @_parse url, null, options, (err, response) ->
             cb(response, err)
@@ -62,6 +67,9 @@ class VASTParser
 
         parentURLs ?= []
         parentURLs.push url
+
+        if timeoutDuration
+            options.timeout = timeoutDuration - (Date.now() - timeoutStart)
 
         URLHandler.get url, options, (err, xml) =>
             return cb(err) if err?
